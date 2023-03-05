@@ -10,5 +10,5 @@ import Combine
 
 protocol ImageRepositoryAbs {
         
-    func downloadImage(operation: DownloadImageOperation, queue: OperationQueue) -> AnyPublisher<Data, Error>
+    func downloadImage(operation: DownloadImageOperation, queue: OperationQueue) -> AnyPublisher<ImageDataEntity, Error>
 }

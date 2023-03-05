@@ -10,14 +10,14 @@ import Combine
 
 class ImageRepository: ImageRepositoryAbs {
     
-    func downloadImage(operation: DownloadImageOperation, queue: OperationQueue) -> AnyPublisher<Data, Error> {
+    func downloadImage(operation: DownloadImageOperation, queue: OperationQueue) -> AnyPublisher<ImageDataEntity, Error> {
         
-        let subject = PassthroughSubject<Data, Error>()
+        let subject = PassthroughSubject<ImageDataEntity, Error>()
 
         operation.completion = { state in
             switch state {
-            case .success(let data):
-                subject.send(data)
+            case .success(let data, let name):
+                subject.send(ImageDataEntity(data: data, name: name))
                 print(data)
             case .failure(let error):
                 subject.send(completion: .failure(error))

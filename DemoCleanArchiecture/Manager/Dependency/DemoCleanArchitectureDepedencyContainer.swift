@@ -15,11 +15,8 @@ class DemoCleanArchitectureDepedencyContainer {
     }
     
     func makeRootViewController() -> UIViewController {
-        let vc = ImageTableViewController(vm: makeImageTableVM())
-        
-        func makeImageTableVM() -> some ImageTableVMAbs {
-            return ImageTableVM()
-        }
+        let dependency: ImageTblDependencyContainerAbs = DIContainer.shared.getDepedency()
+        let vc = dependency.makeImageTableViewController()
         return vc
     }
     
@@ -27,6 +24,7 @@ class DemoCleanArchitectureDepedencyContainer {
         DIContainer.shared.register(type: RepositoryProviderAbs.self
                                     , service: RepositoryProvider())
         DIContainer.shared.register(type: UseCaseProviderAbs.self, service: UseCaseProvider())
-   
+        DIContainer.shared.register(type: ImageDetailDependencyContainerAbs.self, service: ImageDetailDependencyContainer())
+        DIContainer.shared.register(type: ImageTblDependencyContainerAbs.self, service: ImageTblDependencyContainer())
     }
 }

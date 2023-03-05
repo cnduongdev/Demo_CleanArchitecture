@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 enum DownloadImageState {
-    case success(data: Data)
+    case success(data: Data, name: String)
     case failure(error: Error)
 }
 
@@ -36,7 +36,7 @@ class DownloadImageOperation: AsyncOperation {
                 return
             }
             guard let imgData = data else { return }
-            self.completion?(.success(data: imgData))
+            self.completion?(.success(data: imgData, name: imgURL.lastPathComponent))
         }
         
         task?.resume()

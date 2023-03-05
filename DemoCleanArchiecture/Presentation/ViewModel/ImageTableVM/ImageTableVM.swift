@@ -8,6 +8,11 @@
 import Foundation
 import Combine
 
+enum ImageTableState {
+    
+    case openImageDetailVC(model: ImageDataModel, frame: CGRect)
+}
+
 protocol ImageTableVMAbs {
     
     func readImageUrls()
@@ -19,6 +24,12 @@ protocol ImageTableVMAbs {
     func removeExistOpration(indexPath: IndexPath)
     
     func getNumberOfDataSource() -> Int
+    
+    func handleDidSelected(at indexPath: IndexPath, frame: CGRect)
+    
+    func getViewStateSubject() -> PassthroughSubject<ImageTableState, Never>
+    
+    func getSet() -> Set<AnyCancellable>
 }
 
 class ImageTableVM: ImageTableVMAbs {
@@ -26,11 +37,17 @@ class ImageTableVM: ImageTableVMAbs {
     struct Input {
         let useCaseProvider: UseCaseProviderAbs = DIContainer.shared.getDepedency()
     }
+
+    struct Output {
+        let viewState = PassthroughSubject<ImageTableState, Never>()
+    }
     
     var urls: [String] = []
     let input = Input()
+    let output = Output()
     let operationQueue = OperationQueue()
     var operationIndexPath: [IndexPath: Operation] = [:]
+    var dataIndexPath: [IndexPath: ImageDataModel] = [:]
     var set = Set<AnyCancellable>()
     
     init() {
@@ -57,7 +74,9 @@ class ImageTableVM: ImageTableVMAbs {
                 completion(nil)
             }, receiveValue: { [weak self] value in
                 guard let `self` = self else { return }
-                completion(value)
+                let imgDataModel = value.map()
+                self.dataIndexPath[indexPath] = imgDataModel
+                completion(imgDataModel.data)
             }).store(in: &set)
         
     }
@@ -76,5 +95,19 @@ class ImageTableVM: ImageTableVMAbs {
     
     func getNumberOfDataSource() -> Int {
         return urls.count
+    }
+    
+    func handleDidSelected(at indexPath: IndexPath, frame: CGRect) {
+        if let dataModel = dataIndexPath[indexPath] {
+            output.viewState.send(.openImageDetailVC(model: dataModel, frame: frame))
+        }
+    }
+    
+    func getViewStateSubject() -> PassthroughSubject<ImageTableState, Never> {
+        return output.viewState
+    }
+    
+    func getSet() -> Set<AnyCancellable> {
+        return set
     }
 }

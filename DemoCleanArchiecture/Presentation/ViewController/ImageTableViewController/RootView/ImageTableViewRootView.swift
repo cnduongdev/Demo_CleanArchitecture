@@ -13,10 +13,12 @@ class ImageTableViewRootView: UIView {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel: ImageTableVM
+    var viewModel: ImageTableVMAbs
+    
+    var selectedImage: UIImageView?
     
     init(frame: CGRect, vm: ImageTableVMAbs) {
-        self.viewModel = vm as! ImageTableVM
+        self.viewModel = vm
         super.init(frame: frame)
         commitInit()
     }
@@ -52,7 +54,7 @@ extension ImageTableViewRootView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(100)
+        return CGFloat(150)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,5 +64,12 @@ extension ImageTableViewRootView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         viewModel.cancelOperation(indexPath: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? ImageCell else { return }
+        selectedImage = cell.imgView
+        let originalFrame = selectedImage!.superview!.convert(selectedImage!.frame, to: nil)
+        viewModel.handleDidSelected(at: indexPath, frame: originalFrame)
     }
 }

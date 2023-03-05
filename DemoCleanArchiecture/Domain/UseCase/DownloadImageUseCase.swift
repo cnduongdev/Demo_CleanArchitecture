@@ -11,7 +11,7 @@ import Combine
 class DownloadImageUseCase: UseCase {
     
     typealias PM = DownloadImageParams
-    typealias EM = AnyPublisher<Data, Error>
+    typealias EM = AnyPublisher<ImageDataEntity, Error>
     
     private let repository: ImageRepositoryAbs
     
@@ -19,7 +19,7 @@ class DownloadImageUseCase: UseCase {
         self.repository = repository
     }
     
-    func execute(params: DownloadImageParams) -> AnyPublisher<Data, Error> {
+    func execute(params: DownloadImageParams) -> AnyPublisher<ImageDataEntity, Error> {
         return repository.downloadImage(operation: params.operation, queue: params.operationQueue)
     }
 }

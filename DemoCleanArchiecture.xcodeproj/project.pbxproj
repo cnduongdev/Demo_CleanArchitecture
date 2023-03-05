@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		186593B829B348C900B21153 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186593B729B348C900B21153 /* PopAnimator.swift */; };
+		186593BC29B34B8400B21153 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186593BA29B34B8400B21153 /* ImageDetailViewController.swift */; };
+		186593BD29B34B8400B21153 /* ImageDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186593BB29B34B8400B21153 /* ImageDetailViewController.xib */; };
+		186593C029B34C0900B21153 /* ImageDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186593BF29B34C0900B21153 /* ImageDetailVM.swift */; };
+		186593C329B352C900B21153 /* ImageTblDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186593C229B352C900B21153 /* ImageTblDependencyContainer.swift */; };
+		186593C629B354AA00B21153 /* ImageDetailDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186593C529B354AA00B21153 /* ImageDetailDependencyContainer.swift */; };
+		186593C929B3575D00B21153 /* ImageDataEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186593C829B3575D00B21153 /* ImageDataEntity.swift */; };
+		186593CC29B3577300B21153 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186593CB29B3577200B21153 /* Mapper.swift */; };
+		186593CF29B357BD00B21153 /* ImageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186593CE29B357BD00B21153 /* ImageDataModel.swift */; };
 		7334EAEE29B1D56C00163344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7334EAED29B1D56C00163344 /* AppDelegate.swift */; };
 		7334EAF029B1D56C00163344 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7334EAEF29B1D56C00163344 /* SceneDelegate.swift */; };
 		7334EAF529B1D56C00163344 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7334EAF329B1D56C00163344 /* Main.storyboard */; };
@@ -54,6 +63,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		186593B729B348C900B21153 /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
+		186593BA29B34B8400B21153 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		186593BB29B34B8400B21153 /* ImageDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageDetailViewController.xib; sourceTree = "<group>"; };
+		186593BF29B34C0900B21153 /* ImageDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailVM.swift; sourceTree = "<group>"; };
+		186593C229B352C900B21153 /* ImageTblDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTblDependencyContainer.swift; sourceTree = "<group>"; };
+		186593C529B354AA00B21153 /* ImageDetailDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailDependencyContainer.swift; sourceTree = "<group>"; };
+		186593C829B3575D00B21153 /* ImageDataEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataEntity.swift; sourceTree = "<group>"; };
+		186593CB29B3577200B21153 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		186593CE29B357BD00B21153 /* ImageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataModel.swift; sourceTree = "<group>"; };
 		7334EAEA29B1D56C00163344 /* DemoCleanArchiecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCleanArchiecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7334EAED29B1D56C00163344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7334EAEF29B1D56C00163344 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +130,79 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		186593B529B348BB00B21153 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				186593B629B348C000B21153 /* Animation */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		186593B629B348C000B21153 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				186593B729B348C900B21153 /* PopAnimator.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		186593B929B34B6B00B21153 /* DetailImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				186593BA29B34B8400B21153 /* ImageDetailViewController.swift */,
+				186593BB29B34B8400B21153 /* ImageDetailViewController.xib */,
+			);
+			path = DetailImageViewController;
+			sourceTree = "<group>";
+		};
+		186593BE29B34BFE00B21153 /* ImageDetailVM */ = {
+			isa = PBXGroup;
+			children = (
+				186593BF29B34C0900B21153 /* ImageDetailVM.swift */,
+			);
+			path = ImageDetailVM;
+			sourceTree = "<group>";
+		};
+		186593C129B352AE00B21153 /* ImageTblDependencyContainer */ = {
+			isa = PBXGroup;
+			children = (
+				186593C229B352C900B21153 /* ImageTblDependencyContainer.swift */,
+			);
+			path = ImageTblDependencyContainer;
+			sourceTree = "<group>";
+		};
+		186593C429B3549900B21153 /* ImageDetailDependencyContainer */ = {
+			isa = PBXGroup;
+			children = (
+				186593C529B354AA00B21153 /* ImageDetailDependencyContainer.swift */,
+			);
+			path = ImageDetailDependencyContainer;
+			sourceTree = "<group>";
+		};
+		186593C729B3575200B21153 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				186593C829B3575D00B21153 /* ImageDataEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		186593CA29B3576A00B21153 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				186593CB29B3577200B21153 /* Mapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		186593CD29B357B400B21153 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				186593CE29B357BD00B21153 /* ImageDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7334EAE129B1D56C00163344 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +261,7 @@
 		7334EB1D29B1D62600163344 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				186593C729B3575200B21153 /* Entity */,
 				7334EB2D29B1DFF700163344 /* Repository */,
 			);
 			path = Data;
@@ -178,6 +270,7 @@
 		7334EB1E29B1D63900163344 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				186593B529B348BB00B21153 /* View */,
 				73D18ACE29B1F88700E46BC5 /* ViewModel */,
 				73D18AC929B1F7BD00E46BC5 /* Cell */,
 				7334EB4529B1F2DB00163344 /* ViewController */,
@@ -188,6 +281,8 @@
 		7334EB1F29B1D64100163344 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				186593CD29B357B400B21153 /* Model */,
+				186593CA29B3576A00B21153 /* Mapper */,
 				7334EB3029B1E8CF00163344 /* UseCase */,
 				7334EB2A29B1DFD200163344 /* RepositoryAbs */,
 			);
@@ -248,6 +343,8 @@
 		7334EB3829B1EC9C00163344 /* Dependency */ = {
 			isa = PBXGroup;
 			children = (
+				186593C429B3549900B21153 /* ImageDetailDependencyContainer */,
+				186593C129B352AE00B21153 /* ImageTblDependencyContainer */,
 				7334EB4029B1EF6100163344 /* RepositoryProvider */,
 				7334EB3F29B1EF5100163344 /* UseCaseProvider */,
 				7334EB3929B1ECBF00163344 /* DIContainer.swift */,
@@ -277,6 +374,7 @@
 		7334EB4529B1F2DB00163344 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				186593B929B34B6B00B21153 /* DetailImageViewController */,
 				7334EB4629B1F2E600163344 /* ImageTableViewController */,
 			);
 			path = ViewController;
@@ -312,6 +410,7 @@
 		73D18ACE29B1F88700E46BC5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				186593BE29B34BFE00B21153 /* ImageDetailVM */,
 				73D18ACF29B1F88D00E46BC5 /* ImageTableVM */,
 			);
 			path = ViewModel;
@@ -430,6 +529,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7334EAFA29B1D56C00163344 /* LaunchScreen.storyboard in Resources */,
+				186593BD29B34B8400B21153 /* ImageDetailViewController.xib in Resources */,
 				7334EAF729B1D56C00163344 /* Assets.xcassets in Resources */,
 				7349B83329B1F5A100401F41 /* ImageTableViewRootView.xib in Resources */,
 				73D18ACD29B1F7CD00E46BC5 /* ImageCell.xib in Resources */,
@@ -463,11 +563,18 @@
 				7334EB4229B1EFA200163344 /* RepositoryProvider.swift in Sources */,
 				7334EB3E29B1EEC300163344 /* UseCaseProviderAbs.swift in Sources */,
 				7334EB3A29B1ECBF00163344 /* DIContainer.swift in Sources */,
+				186593CC29B3577300B21153 /* Mapper.swift in Sources */,
 				7334EB3C29B1EE3400163344 /* UseCaseProvider.swift in Sources */,
 				73D18ACC29B1F7CD00E46BC5 /* ImageCell.swift in Sources */,
 				7334EB3229B1E8EF00163344 /* DownloadImageUseCase.swift in Sources */,
 				7334EB2C29B1DFE700163344 /* ImageRepositoryAbs.swift in Sources */,
+				186593CF29B357BD00B21153 /* ImageDataModel.swift in Sources */,
+				186593C029B34C0900B21153 /* ImageDetailVM.swift in Sources */,
+				186593B829B348C900B21153 /* PopAnimator.swift in Sources */,
+				186593C929B3575D00B21153 /* ImageDataEntity.swift in Sources */,
 				73D18AD129B1F89900E46BC5 /* ImageTableVM.swift in Sources */,
+				186593C629B354AA00B21153 /* ImageDetailDependencyContainer.swift in Sources */,
+				186593C329B352C900B21153 /* ImageTblDependencyContainer.swift in Sources */,
 				73D18AD329B1FA0B00E46BC5 /* DemoCleanArchitectureDepedencyContainer.swift in Sources */,
 				7334EAEE29B1D56C00163344 /* AppDelegate.swift in Sources */,
 				7334EB4429B1EFB200163344 /* RepositoryProviderAbs.swift in Sources */,
@@ -477,6 +584,7 @@
 				7334EB3429B1E8FC00163344 /* UseCase.swift in Sources */,
 				7334EB2729B1D70400163344 /* AsyncOperation.swift in Sources */,
 				7334EAF029B1D56C00163344 /* SceneDelegate.swift in Sources */,
+				186593BC29B34B8400B21153 /* ImageDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
